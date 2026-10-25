@@ -23,3 +23,7 @@ jobs:
         run: |
           node --check dist/app.js
           node --check dist/engine.js
+          node --check dist/extraction.js
+          node --check dist/classifier.js
+      - name: Verify reproducible development evaluation
+        run: npm run evaluate:check

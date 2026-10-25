@@ -87,3 +87,7 @@ Begin with structured sample inputs so the temporal logic can be developed witho
 6. Write the project report around measured findings and limitations.
 
 Timeline depends on team size, available hours, hardware, and reviewer availability. Hackathon eligibility depends on each event's rules about prior work.
+
+## Implemented milestone: v0.2
+
+The browser app now includes a small learned action classifier, expanded field rules, explicit per-line confirmation, reviewer corrections, evidence history, and a reproducible synthetic development evaluation. The original strict parser remains the baseline. See `docs/MODEL_CARD.md` for data, limitations, and evaluation scope. Pharmacist-reviewed evaluation, OCR, broader language coverage, and brand resolution remain future milestones.

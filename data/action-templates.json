@@ -1,0 +1,17 @@
+{
+  "description": "Synthetic language templates authored for a software prototype; not pharmacist reviewed. Split by template family, not by expanded row.",
+  "train": {
+    "start": ["start {instruction}", "begin taking {instruction}", "initiate {instruction}", "new prescription: {instruction}", "commence {instruction}", "please start {instruction}", "begin {instruction}"],
+    "continue": ["continue {instruction}", "keep taking {instruction}", "maintain {instruction}", "remain on {instruction}", "continue taking {instruction}", "please continue {instruction}", "keep {instruction}"],
+    "change": ["change {instruction}", "increase {medicine} to {regimen}", "decrease {medicine} to {regimen}", "adjust {medicine} to {regimen}", "reduce {medicine} to {regimen}", "update {medicine} to {regimen}", "change the dose of {medicine} to {regimen}"],
+    "stop": ["stop {medicine}", "discontinue {medicine}", "cease {medicine}", "please stop {medicine}", "discontinue taking {medicine}", "stop taking {medicine}", "cease taking {medicine}"],
+    "listed": ["{instruction}", "medication: {instruction}", "listed medication: {instruction}", "medication list: {instruction}", "recorded: {instruction}", "listed: {instruction}", "record entry: {instruction}"]
+  },
+  "evaluation": {
+    "start": ["please begin taking {instruction}", "initiate treatment with {instruction}"],
+    "continue": ["please keep taking {instruction}", "maintain treatment with {instruction}"],
+    "change": ["please increase {medicine} to {regimen}", "adjust the dose of {medicine} to {regimen}"],
+    "stop": ["please discontinue taking {medicine}", "cease treatment with {medicine}"],
+    "listed": ["medication recorded: {instruction}", "recorded medication: {instruction}"]
+  }
+}

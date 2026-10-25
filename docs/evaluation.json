@@ -1,0 +1,856 @@
+{
+  "version": "0.2.0",
+  "scope": "Synthetic development benchmark, not independent clinical validation. Action evaluation cue families are absent from classifier training; parser rules were developed for these supported constructions. No claim of real-world generalization.",
+  "trainingCueCount": 35,
+  "evaluationCueCount": 10,
+  "baseline": {
+    "total": 30,
+    "covered": 0,
+    "correct": 0,
+    "coverage": 0,
+    "precisionAmongCovered": null,
+    "exactMatchAcrossAll": 0
+  },
+  "expandedSuggestions": {
+    "total": 30,
+    "covered": 30,
+    "correct": 30,
+    "coverage": 1,
+    "precisionAmongCovered": 1,
+    "exactMatchAcrossAll": 1
+  },
+  "actionClassification": {
+    "correct": 10,
+    "total": 10
+  },
+  "unsupportedRejection": {
+    "rejected": 16,
+    "total": 16
+  },
+  "actionResults": [
+    {
+      "cue": "please begin taking",
+      "expected": "start",
+      "predicted": "start",
+      "correct": true
+    },
+    {
+      "cue": "initiate treatment with",
+      "expected": "start",
+      "predicted": "start",
+      "correct": true
+    },
+    {
+      "cue": "please keep taking",
+      "expected": "continue",
+      "predicted": "continue",
+      "correct": true
+    },
+    {
+      "cue": "maintain treatment with",
+      "expected": "continue",
+      "predicted": "continue",
+      "correct": true
+    },
+    {
+      "cue": "please increase",
+      "expected": "change",
+      "predicted": "change",
+      "correct": true
+    },
+    {
+      "cue": "adjust the dose of",
+      "expected": "change",
+      "predicted": "change",
+      "correct": true
+    },
+    {
+      "cue": "please discontinue taking",
+      "expected": "stop",
+      "predicted": "stop",
+      "correct": true
+    },
+    {
+      "cue": "cease treatment with",
+      "expected": "stop",
+      "predicted": "stop",
+      "correct": true
+    },
+    {
+      "cue": "medication recorded:",
+      "expected": "listed",
+      "predicted": "listed",
+      "correct": true
+    },
+    {
+      "cue": "recorded medication:",
+      "expected": "listed",
+      "predicted": "listed",
+      "correct": true
+    }
+  ],
+  "rows": [
+    {
+      "family": "start-0",
+      "text": "please begin taking Epsilonmed 5 mg orally twice daily.",
+      "expected": {
+        "name": "Epsilonmed",
+        "action": "start",
+        "amount": 5,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Epsilonmed",
+        "action": "start",
+        "amount": 5,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "start-0",
+      "text": "please begin taking Zetamed 10 mg orally twice daily.",
+      "expected": {
+        "name": "Zetamed",
+        "action": "start",
+        "amount": 10,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Zetamed",
+        "action": "start",
+        "amount": 10,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "start-0",
+      "text": "please begin taking Etamed 20 mg orally twice daily.",
+      "expected": {
+        "name": "Etamed",
+        "action": "start",
+        "amount": 20,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Etamed",
+        "action": "start",
+        "amount": 20,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "start-1",
+      "text": "initiate treatment with Epsilonmed 5 mg orally twice daily.",
+      "expected": {
+        "name": "Epsilonmed",
+        "action": "start",
+        "amount": 5,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Epsilonmed",
+        "action": "start",
+        "amount": 5,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "start-1",
+      "text": "initiate treatment with Zetamed 10 mg orally twice daily.",
+      "expected": {
+        "name": "Zetamed",
+        "action": "start",
+        "amount": 10,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Zetamed",
+        "action": "start",
+        "amount": 10,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "start-1",
+      "text": "initiate treatment with Etamed 20 mg orally twice daily.",
+      "expected": {
+        "name": "Etamed",
+        "action": "start",
+        "amount": 20,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Etamed",
+        "action": "start",
+        "amount": 20,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "continue-0",
+      "text": "please keep taking Epsilonmed 5 mg orally twice daily.",
+      "expected": {
+        "name": "Epsilonmed",
+        "action": "continue",
+        "amount": 5,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Epsilonmed",
+        "action": "continue",
+        "amount": 5,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "continue-0",
+      "text": "please keep taking Zetamed 10 mg orally twice daily.",
+      "expected": {
+        "name": "Zetamed",
+        "action": "continue",
+        "amount": 10,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Zetamed",
+        "action": "continue",
+        "amount": 10,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "continue-0",
+      "text": "please keep taking Etamed 20 mg orally twice daily.",
+      "expected": {
+        "name": "Etamed",
+        "action": "continue",
+        "amount": 20,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Etamed",
+        "action": "continue",
+        "amount": 20,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "continue-1",
+      "text": "maintain treatment with Epsilonmed 5 mg orally twice daily.",
+      "expected": {
+        "name": "Epsilonmed",
+        "action": "continue",
+        "amount": 5,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Epsilonmed",
+        "action": "continue",
+        "amount": 5,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "continue-1",
+      "text": "maintain treatment with Zetamed 10 mg orally twice daily.",
+      "expected": {
+        "name": "Zetamed",
+        "action": "continue",
+        "amount": 10,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Zetamed",
+        "action": "continue",
+        "amount": 10,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "continue-1",
+      "text": "maintain treatment with Etamed 20 mg orally twice daily.",
+      "expected": {
+        "name": "Etamed",
+        "action": "continue",
+        "amount": 20,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Etamed",
+        "action": "continue",
+        "amount": 20,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "change-0",
+      "text": "please increase Epsilonmed to 5 mg orally twice daily.",
+      "expected": {
+        "name": "Epsilonmed",
+        "action": "change",
+        "amount": 5,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Epsilonmed",
+        "action": "change",
+        "amount": 5,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "change-0",
+      "text": "please increase Zetamed to 10 mg orally twice daily.",
+      "expected": {
+        "name": "Zetamed",
+        "action": "change",
+        "amount": 10,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Zetamed",
+        "action": "change",
+        "amount": 10,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "change-0",
+      "text": "please increase Etamed to 20 mg orally twice daily.",
+      "expected": {
+        "name": "Etamed",
+        "action": "change",
+        "amount": 20,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Etamed",
+        "action": "change",
+        "amount": 20,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "change-1",
+      "text": "adjust the dose of Epsilonmed to 5 mg orally twice daily.",
+      "expected": {
+        "name": "Epsilonmed",
+        "action": "change",
+        "amount": 5,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Epsilonmed",
+        "action": "change",
+        "amount": 5,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "change-1",
+      "text": "adjust the dose of Zetamed to 10 mg orally twice daily.",
+      "expected": {
+        "name": "Zetamed",
+        "action": "change",
+        "amount": 10,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Zetamed",
+        "action": "change",
+        "amount": 10,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "change-1",
+      "text": "adjust the dose of Etamed to 20 mg orally twice daily.",
+      "expected": {
+        "name": "Etamed",
+        "action": "change",
+        "amount": 20,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Etamed",
+        "action": "change",
+        "amount": 20,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "stop-0",
+      "text": "please discontinue taking Epsilonmed.",
+      "expected": {
+        "name": "Epsilonmed",
+        "action": "stop"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Epsilonmed",
+        "action": "stop",
+        "amount": "",
+        "unit": "mg",
+        "route": "unspecified",
+        "frequency": "once daily"
+      }
+    },
+    {
+      "family": "stop-0",
+      "text": "please discontinue taking Zetamed.",
+      "expected": {
+        "name": "Zetamed",
+        "action": "stop"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Zetamed",
+        "action": "stop",
+        "amount": "",
+        "unit": "mg",
+        "route": "unspecified",
+        "frequency": "once daily"
+      }
+    },
+    {
+      "family": "stop-0",
+      "text": "please discontinue taking Etamed.",
+      "expected": {
+        "name": "Etamed",
+        "action": "stop"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Etamed",
+        "action": "stop",
+        "amount": "",
+        "unit": "mg",
+        "route": "unspecified",
+        "frequency": "once daily"
+      }
+    },
+    {
+      "family": "stop-1",
+      "text": "cease treatment with Epsilonmed.",
+      "expected": {
+        "name": "Epsilonmed",
+        "action": "stop"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Epsilonmed",
+        "action": "stop",
+        "amount": "",
+        "unit": "mg",
+        "route": "unspecified",
+        "frequency": "once daily"
+      }
+    },
+    {
+      "family": "stop-1",
+      "text": "cease treatment with Zetamed.",
+      "expected": {
+        "name": "Zetamed",
+        "action": "stop"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Zetamed",
+        "action": "stop",
+        "amount": "",
+        "unit": "mg",
+        "route": "unspecified",
+        "frequency": "once daily"
+      }
+    },
+    {
+      "family": "stop-1",
+      "text": "cease treatment with Etamed.",
+      "expected": {
+        "name": "Etamed",
+        "action": "stop"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Etamed",
+        "action": "stop",
+        "amount": "",
+        "unit": "mg",
+        "route": "unspecified",
+        "frequency": "once daily"
+      }
+    },
+    {
+      "family": "listed-0",
+      "text": "medication recorded: Epsilonmed 5 mg orally twice daily.",
+      "expected": {
+        "name": "Epsilonmed",
+        "action": "listed",
+        "amount": 5,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Epsilonmed",
+        "action": "listed",
+        "amount": 5,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "listed-0",
+      "text": "medication recorded: Zetamed 10 mg orally twice daily.",
+      "expected": {
+        "name": "Zetamed",
+        "action": "listed",
+        "amount": 10,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Zetamed",
+        "action": "listed",
+        "amount": 10,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "listed-0",
+      "text": "medication recorded: Etamed 20 mg orally twice daily.",
+      "expected": {
+        "name": "Etamed",
+        "action": "listed",
+        "amount": 20,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Etamed",
+        "action": "listed",
+        "amount": 20,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "listed-1",
+      "text": "recorded medication: Epsilonmed 5 mg orally twice daily.",
+      "expected": {
+        "name": "Epsilonmed",
+        "action": "listed",
+        "amount": 5,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Epsilonmed",
+        "action": "listed",
+        "amount": 5,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "listed-1",
+      "text": "recorded medication: Zetamed 10 mg orally twice daily.",
+      "expected": {
+        "name": "Zetamed",
+        "action": "listed",
+        "amount": 10,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Zetamed",
+        "action": "listed",
+        "amount": 10,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    },
+    {
+      "family": "listed-1",
+      "text": "recorded medication: Etamed 20 mg orally twice daily.",
+      "expected": {
+        "name": "Etamed",
+        "action": "listed",
+        "amount": 20,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      },
+      "baselineCovered": false,
+      "baselineCorrect": false,
+      "suggestionCovered": true,
+      "suggestionCorrect": true,
+      "suggested": {
+        "name": "Etamed",
+        "action": "listed",
+        "amount": 20,
+        "unit": "mg",
+        "route": "oral",
+        "frequency": "twice daily"
+      }
+    }
+  ],
+  "unsupportedResults": [
+    {
+      "text": "Do not stop Alphamed.",
+      "rejected": true
+    },
+    {
+      "text": "Hold Alphamed 10 mg orally daily.",
+      "rejected": true
+    },
+    {
+      "text": "Stop Alphamed if dizzy.",
+      "rejected": true
+    },
+    {
+      "text": "Stop Alphamed and Betamed.",
+      "rejected": true
+    },
+    {
+      "text": "Continue Alphamed 10 mg daily for 5 days.",
+      "rejected": true
+    },
+    {
+      "text": "Begin taking Alphamed 10 mg before meals.",
+      "rejected": true
+    },
+    {
+      "text": "Increase Alphamed from 5 mg to 10 mg daily.",
+      "rejected": true
+    },
+    {
+      "text": "Alphamed 10 mg then reduce to 5 mg.",
+      "rejected": true
+    },
+    {
+      "text": "Alphamed 10 mg BID.",
+      "rejected": true
+    },
+    {
+      "text": "Take one tablet of Alphamed daily.",
+      "rejected": true
+    },
+    {
+      "text": "No Alphamed 10 mg daily.",
+      "rejected": true
+    },
+    {
+      "text": "Stop all medicines.",
+      "rejected": true
+    },
+    {
+      "text": "Restart Alphamed 10 mg tomorrow.",
+      "rejected": true
+    },
+    {
+      "text": "Discontinue Alphamed unless instructed otherwise.",
+      "rejected": true
+    },
+    {
+      "text": "Change Alphamed 10 mg daily from 2026-11-01.",
+      "rejected": true
+    },
+    {
+      "text": "Continue Alphamed 10 mg as needed, max 3 doses.",
+      "rejected": true
+    }
+  ]
+}

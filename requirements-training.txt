@@ -1,0 +1,2 @@
+# Optional: only needed to retrain the included browser model.
+scikit-learn==1.8.0
