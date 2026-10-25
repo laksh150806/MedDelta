@@ -4,7 +4,7 @@ A working medication-record comparison prototype. Open dated source records, ins
 
 ![MedDelta medication review workspace with fictional sample records](docs/preview.png)
 
-**Status:** Working v0.2 prototype with 26 automated behavioral tests, a local action classifier, and a source-linked extraction review workflow. Pharmacist-reviewed validation is still pending.
+**Status:** Working v0.3 prototype with 37 automated behavioral tests, typed-PDF import, a local action classifier, and source-linked extraction review. Pharmacist-reviewed validation is still pending.
 
 **Hosted demo:** https://meddelta-review.lakshnagori1508.chatgpt.site (private to the project owner). Everyone with this repository can run the same application locally.
 
@@ -29,7 +29,9 @@ npm test
 ## What works
 
 - Four fictional sample cases and editable dated records.
-- Import of plain-text files (up to 60 KB / 15,000 characters).
+- Plain-text import and local typed-PDF import (up to 10 MB / 10 pages).
+- PDF page preview, explicit line selection, and original-file page references.
+- A built-in two-page fictional PDF to try without supplying a document.
 - A strict parser plus expanded extraction using a local action classifier and field rules.
 - A review screen to correct and explicitly confirm expanded extracted fields.
 - Source-linked extraction history, reviewer identity, and timestamps.
@@ -62,6 +64,10 @@ Use only fictional or appropriately de-identified records. Exported files contai
 - `dist/classifier.js`, `dist/action-model.js`: local model inference and exported weights.
 - `scripts/train_action_model.py`: optional model training.
 - `scripts/evaluate.mjs`: reproducible synthetic development evaluation.
+- `dist/pdf-import.js`, `dist/pdf-layout.js`: local PDF reading and conservative layout reconstruction.
+- `dist/provenance.js`: original-file page references for unchanged imported text.
+- `dist/vendor/pdfjs`: pinned PDF.js assets and upstream licenses.
+- `scripts/smoke_pdf.py`: browser integration checks using fictional PDF fixtures.
 - `dist/index.html`, `dist/styles.css`: responsive interface.
 - `tests/engine.test.js`: core behavioral checks.
 - `server.js`: dependency-free development server.
@@ -92,3 +98,9 @@ npm run evaluate
 ```
 
 Read [the model card](docs/MODEL_CARD.md) before interpreting the results. The small synthetic benchmark exercises supported constructions; its scores do not establish real-world or clinical performance.
+
+## Try PDF import
+
+Choose **Add record → Try a sample PDF**, select the medication lines on each page, and acknowledge the visual check. Enter the document date, save, then review the extracted fields. PDFs stay in the browser tab.
+
+Read [PDF import behavior and limits](docs/PDF_IMPORT.md). Scanned PDFs and handwriting still need OCR, which is not included. Original PDF bytes are not part of exported JSON reports.

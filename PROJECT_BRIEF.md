@@ -91,3 +91,7 @@ Timeline depends on team size, available hours, hardware, and reviewer availabil
 ## Implemented milestone: v0.2
 
 The browser app now includes a small learned action classifier, expanded field rules, explicit per-line confirmation, reviewer corrections, evidence history, and a reproducible synthetic development evaluation. The original strict parser remains the baseline. See `docs/MODEL_CARD.md` for data, limitations, and evaluation scope. Pharmacist-reviewed evaluation, OCR, broader language coverage, and brand resolution remain future milestones.
+
+## Implemented milestone: v0.3
+
+Typed PDFs can now be imported locally with page previews and explicit line selection. Source filenames, hashes, pages, and extracted-line references accompany unchanged imported text. Mixed text/image-only documents retain unread-page warnings, and unsupported imports do not overwrite existing drafts. This is text-layer extraction, not OCR or clinical validation.

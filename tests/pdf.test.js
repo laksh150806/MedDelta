@@ -1,0 +1,23 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {extractPageLines,selectedPdfText} from '../dist/pdf-layout.js';
+import {validatePdfFile} from '../dist/pdf-import.js';
+import {sourceLocation} from '../dist/provenance.js';
+import {parseRecord,compareRecords} from '../dist/engine.js';
+const item=(str,x,y,width=60)=>({str,width,height:12,transform:[12,0,0,12,x,y]});
+test('PDF text reconstructs rows and joins adjacent split glyph runs',()=>{
+ const r=extractPageLines([item('daily.',180,650),item('Met',40,700,18),item('formin',58,700,35),item('500 mg',100,700,45),item('Continue',40,650,50),item('Alpha',100,650,35)],2);
+ assert.equal(r.lines[0].text,'Metformin 500 mg');assert.equal(r.lines[1].text,'Continue Alpha daily.');assert.equal(r.lines[0].page,2);
+});
+test('wide columns are separated and explicitly warned about',()=>{const r=extractPageLines([item('Left instruction',40,700),item('Right instruction',340,700)],1);assert.equal(r.lines.length,2);assert.equal(r.warnings.length,1);});
+test('image-only pages are identified instead of silently skipped',()=>{const r=extractPageLines([],3);assert.equal(r.lines.length,0);assert.match(r.warnings[0],/Page 3 has no extractable text/);});
+test('rotated text fails explicitly',()=>assert.throws(()=>extractPageLines([{...item('Rotated',40,700),transform:[0,12,-12,0,40,700]}],1),/rotated/));
+test('selected lines preserve page ordering and provenance',()=>{const pages=[{lines:[{page:1,line:1,text:'A'},{page:1,line:2,text:'B'}]},{lines:[{page:2,line:1,text:'C'}]}];const r=selectedPdfText(pages,new Set(['2:1','1:2']));assert.equal(r.text,'B\nC');assert.equal(r.lines[1].recordLine,2);assert.equal(r.lines[1].page,2);});
+test('empty and oversized selections are rejected',()=>{assert.throws(()=>selectedPdfText([],new Set()),/at least one/);assert.throws(()=>selectedPdfText([{lines:[{page:1,line:1,text:'x'.repeat(15001)}]}],new Set(['1:1'])),/15,000/);});
+test('file limits are checked before loading the PDF library',()=>{assert.throws(()=>validatePdfFile({name:'data.txt',size:10}),/PDF/);assert.throws(()=>validatePdfFile({name:'data.pdf',size:0}),/empty/);assert.throws(()=>validatePdfFile({name:'data.pdf',size:11*1024*1024}),/10 MB/);});
+const text='Continue Alpha 10 mg orally once daily.';
+const doc={id:'p',title:'PDF sample',date:'2026-02-01',text,sourceImport:{type:'pdf',fileName:'demo.pdf',sha256:'fictional-hash',importedText:text,lines:[{page:2,line:4,recordLine:1,text}],warnings:[]}};
+test('PDF page evidence is attached to parsed instructions',()=>{assert.equal(parseRecord(doc).events[0].sourceLocation.page,2);assert.equal(sourceLocation(doc,1,text).pdfLine,4);});
+test('editing imported text removes exact page links',()=>assert.equal(sourceLocation({...doc,text:text+' '},1,text),null));
+test('unread PDF pages keep the whole comparison provisional',()=>{const d={...doc,sourceImport:{...doc.sourceImport,warnings:['Page 3 has no extractable text.']}};const r=compareRecords([{...doc,id:'old',date:'2026-01-01'},d]);assert.equal(r.issues.length,1);assert.equal(r.items[0].incomplete,true);});
+test('absence from selected lines is not claimed as absence from the PDF',()=>{const r=compareRecords([{id:'old',title:'Earlier',date:'2026-01-01',text:'Continue Beta 5 mg orally daily.'},doc]);assert.equal(r.items.find(i=>i.key==='beta').label,'Not in imported selection');});

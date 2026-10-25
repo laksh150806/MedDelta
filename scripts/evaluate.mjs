@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {suggestLine} from '../dist/extraction.js';
-import {parseRecord} from '../dist/engine.js';
+import {parseRecord,VERSION} from '../dist/engine.js';
 import {classifyAction} from '../dist/classifier.js';
 import {validFields} from '../dist/review.js';
 const root=fileURLToPath(new URL('../',import.meta.url));
@@ -25,7 +25,7 @@ for(const [label,families] of Object.entries(templates.evaluation))for(const [fa
 const actionResults=Object.entries(templates.evaluation).flatMap(([label,families])=>families.map(template=>{const cue=template.split('{')[0].trim(),prediction=classifyAction(cue);return {cue,expected:label,predicted:prediction.action,correct:prediction.action===label};}));
 const unsupportedResults=unsupported.map(text=>({text,rejected:suggestLine(text).blocked===true}));
 function metrics(prefix){const covered=rows.filter(r=>r[prefix+'Covered']).length,correct=rows.filter(r=>r[prefix+'Correct']).length;return {total:rows.length,covered,correct,coverage:covered/rows.length,precisionAmongCovered:covered?correct/covered:null,exactMatchAcrossAll:correct/rows.length};}
-const report={version:'0.2.0',scope:'Synthetic development benchmark, not independent clinical validation. Action evaluation cue families are absent from classifier training; parser rules were developed for these supported constructions. No claim of real-world generalization.',trainingCueCount:trainCues.length,evaluationCueCount:evaluationCues.length,baseline:metrics('baseline'),expandedSuggestions:metrics('suggestion'),actionClassification:{correct:actionResults.filter(r=>r.correct).length,total:actionResults.length},unsupportedRejection:{rejected:unsupportedResults.filter(r=>r.rejected).length,total:unsupportedResults.length},actionResults,rows,unsupportedResults};
+const report={version:VERSION,scope:'Synthetic development benchmark, not independent clinical validation. Action evaluation cue families are absent from classifier training; parser rules were developed for these supported constructions. No claim of real-world generalization.',trainingCueCount:trainCues.length,evaluationCueCount:evaluationCues.length,baseline:metrics('baseline'),expandedSuggestions:metrics('suggestion'),actionClassification:{correct:actionResults.filter(r=>r.correct).length,total:actionResults.length},unsupportedRejection:{rejected:unsupportedResults.filter(r=>r.rejected).length,total:unsupportedResults.length},actionResults,rows,unsupportedResults};
 const output=JSON.stringify(report,null,2)+'\n';
 if(process.argv.includes('--check')){if(fs.readFileSync(root+'docs/evaluation.json','utf8')!==output)throw new Error('Evaluation report is stale. Run npm run evaluate and review changes.');}
 else fs.writeFileSync(root+'docs/evaluation.json',output);

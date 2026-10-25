@@ -1,3 +1,4 @@
+import {sourceLocation} from './provenance.js';
 export const ACTIONS=['listed','start','continue','change','stop'];
 export const UNITS=['mg','mcg','g','ml','units'];
 export const ROUTES=['unspecified','oral','topical'];
@@ -13,7 +14,7 @@ export function confirmedEvent(doc,line,source){
  const row=doc.extractionReview.lines.find(r=>r.line===line&&r.source===source&&r.confirmed===true);
  if(!row||!validFields(row.fields))return null;
  const f=row.fields,name=f.name.trim().replace(/\s+/g,' ');
- const e={docId:doc.id,docTitle:doc.title,date:doc.date,line,source,key:name.toLowerCase(),name,action:f.action,extraction:'human-confirmed',extractionReviewer:doc.extractionReview.reviewer,extractionReviewedAt:doc.extractionReview.at,suggestedFields:row.suggestedFields||null};
+ const e={docId:doc.id,docTitle:doc.title,date:doc.date,line,source,sourceLocation:sourceLocation(doc,line,source),key:name.toLowerCase(),name,action:f.action,extraction:'human-confirmed',extractionReviewer:doc.extractionReview.reviewer,extractionReviewedAt:doc.extractionReview.at,suggestedFields:row.suggestedFields||null};
  if(f.action!=='stop')Object.assign(e,{amount:Number(f.amount),unit:f.unit,route:f.route,frequency:f.frequency});
  return e;
 }

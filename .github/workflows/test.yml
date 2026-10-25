@@ -25,5 +25,7 @@ jobs:
           node --check dist/engine.js
           node --check dist/extraction.js
           node --check dist/classifier.js
+          node --check dist/pdf-import.js
+          node --check dist/pdf-layout.js
       - name: Verify reproducible development evaluation
         run: npm run evaluate:check

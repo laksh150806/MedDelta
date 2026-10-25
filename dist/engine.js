@@ -1,12 +1,14 @@
 // Conservative comparison; expanded extraction enters only after human confirmation.
 import {confirmedEvent} from './review.js';
-export const VERSION = '0.2.0';
+import {sourceLocation} from './provenance.js';
+export const VERSION = '0.3.0';
 const FREQUENCIES = ['once daily','twice daily','three times daily','once weekly','as needed','daily','weekly'];
 export function validDate(value) {
   return /^\d{4}-\d{2}-\d{2}$/.test(value || '') && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0,10) === value;
 }
 export function parseRecord(doc) {
   const events=[], issues=[];
+  for(const warning of doc.sourceImport?.warnings||[])issues.push({docId:doc.id,line:0,text:doc.sourceImport.fileName,reason:warning});
   if(!validDate(doc.date)) issues.push({docId:doc.id,line:0,text:doc.date || '(missing date)',reason:'A valid document date is required before comparison.'});
   const lines=(doc.text || '').split('\n');
   lines.forEach((raw,index)=>{
@@ -21,7 +23,7 @@ export function parseRecord(doc) {
     const match=clean.match(re);
     if(!stop && !match) {issues.push({docId:doc.id,line:index+1,text:source,reason:'Not fully understood. Use one instruction per line, such as “Continue Metformin 500 mg orally twice daily”. Tapers, combinations, durations, and other qualifiers need manual review.'});return;}
     const name=(stop?stop[1]:match[2]).trim().replace(/\s+/g,' ');
-    const event={docId:doc.id,docTitle:doc.title,date:doc.date,line:index+1,source,key:name.toLowerCase(),name:name[0].toUpperCase()+name.slice(1),action:stop?'stop':(match[1]?.toLowerCase() || 'listed')};
+    const event={docId:doc.id,docTitle:doc.title,date:doc.date,line:index+1,source,sourceLocation:sourceLocation(doc,index+1,source),key:name.toLowerCase(),name:name[0].toUpperCase()+name.slice(1),action:stop?'stop':(match[1]?.toLowerCase() || 'listed')};
     if(!stop) {event.amount=Number(match[3]);event.unit=match[4].toLowerCase().replace(/^unit$/,'units');event.route=match[5]?.toLowerCase().replace('orally','oral').replace('topically','topical') || 'unspecified';event.frequency=match[6].toLowerCase().replace(/^daily$/,'once daily').replace(/^weekly$/,'once weekly');}
     events.push(event);
   });
@@ -56,7 +58,7 @@ export function compareRecords(documents) {
     const incomplete=issues.length>0;
     let status,label,summary,question;
     if(unresolved) {status='conflict';label='Needs clarification';summary='The records contain a difference that is not fully explained.';question=`Which documented instruction for ${first.name} was intended, and from what date? Confirm against the original records.`;}
-    else if(absent && last.action!=='stop') {status='missing';label='Not in latest record';summary='This medicine is not listed in at least one of the latest records. That does not establish that it was stopped.';question=`Was ${first.name} intentionally omitted, continued elsewhere, or explicitly stopped?`;}
+    else if(absent && last.action!=='stop') {status='missing';const pdfSelection=latestDocs.some(d=>d.sourceImport?.type==='pdf'&&!events.some(e=>e.docId===d.id));label=pdfSelection?'Not in imported selection':'Not in latest record';summary=pdfSelection?'This medicine was not found in the selected PDF lines. Check the original PDF; it may appear in unselected content.':'This medicine is not listed in at least one of the latest records. That does not establish that it was stopped.';question=`Was ${first.name} intentionally omitted, continued elsewhere, or explicitly stopped?`;}
     else if(last.action==='stop') {status='stopped';label='Stop documented';summary=last.extraction==='human-confirmed'?'A reviewer interpreted the latest available instruction as a stop. Check the original text and confirmed fields.':'An explicit stop appears in the latest available instruction for this medicine.';question='Confirm the intended effective date and whether later instructions exist.';}
     else if(changed) {status='change';label='Change documented';summary='The records explicitly describe a change in the written instruction.';question='Confirm the change and its effective date with the source record.';}
     else if(events.length===1) {status='new';label='First documented';summary='Only one instruction was found. This does not establish when treatment began.';question='Confirm earlier history if needed.';}
