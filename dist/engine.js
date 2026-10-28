@@ -1,7 +1,7 @@
 // Conservative comparison; expanded extraction enters only after human confirmation.
 import {confirmedEvent} from './review.js';
-import {sourceLocation} from './provenance.js';
-export const VERSION = '0.3.0';
+import {sourceLocation,needsOcrReview} from './provenance.js';
+export const VERSION = '0.4.0';
 const FREQUENCIES = ['once daily','twice daily','three times daily','once weekly','as needed','daily','weekly'];
 export function validDate(value) {
   return /^\d{4}-\d{2}-\d{2}$/.test(value || '') && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0,10) === value;
@@ -15,6 +15,7 @@ export function parseRecord(doc) {
     const source=raw.trim(); if(!source) return;
     const reviewed=confirmedEvent(doc,index+1,source);
     if(reviewed){events.push(reviewed);return;}
+    if(needsOcrReview(doc)){issues.push({docId:doc.id,line:index+1,text:source,reason:'This record includes OCR. Review extraction and confirm each instruction against the original image before it enters the comparison.'});return;}
     const clean=source.replace(/^[-•]\s*/, '').replace(/[.]$/, '').trim();
     // Entire line must match. Additional qualifiers are never silently dropped.
     if(/\b(no|not|all|any|hold|resume|take|takes|taking|reduce|increase|decrease|switch|replace|restart|avoid|unless|until|tomorrow|yesterday|today|tonight|instead|and|or|if|when|while|before|after|for|except|only|now|please|begin|initiate|commence|keep|maintain|remain|adjust|update|discontinue|cease|treatment|to|patient|should|will)\b/i.test(clean)) {issues.push({docId:doc.id,line:index+1,text:source,reason:'This instruction contains an action or qualifier outside the strict parser. Review extraction or leave it unresolved.'});return;}
@@ -58,7 +59,7 @@ export function compareRecords(documents) {
     const incomplete=issues.length>0;
     let status,label,summary,question;
     if(unresolved) {status='conflict';label='Needs clarification';summary='The records contain a difference that is not fully explained.';question=`Which documented instruction for ${first.name} was intended, and from what date? Confirm against the original records.`;}
-    else if(absent && last.action!=='stop') {status='missing';const pdfSelection=latestDocs.some(d=>d.sourceImport?.type==='pdf'&&!events.some(e=>e.docId===d.id));label=pdfSelection?'Not in imported selection':'Not in latest record';summary=pdfSelection?'This medicine was not found in the selected PDF lines. Check the original PDF; it may appear in unselected content.':'This medicine is not listed in at least one of the latest records. That does not establish that it was stopped.';question=`Was ${first.name} intentionally omitted, continued elsewhere, or explicitly stopped?`;}
+    else if(absent && last.action!=='stop') {status='missing';const selection=latestDocs.some(d=>['pdf','image'].includes(d.sourceImport?.type)&&!events.some(e=>e.docId===d.id));label=selection?'Not in imported selection':'Not in latest record';summary=selection?'This medicine was not found in the reviewed selection. Check the original document; it may appear in unread, unselected, or unconfirmed content.':'This medicine is not listed in at least one of the latest records. That does not establish that it was stopped.';question=`Was ${first.name} intentionally omitted, continued elsewhere, or explicitly stopped?`;}
     else if(last.action==='stop') {status='stopped';label='Stop documented';summary=last.extraction==='human-confirmed'?'A reviewer interpreted the latest available instruction as a stop. Check the original text and confirmed fields.':'An explicit stop appears in the latest available instruction for this medicine.';question='Confirm the intended effective date and whether later instructions exist.';}
     else if(changed) {status='change';label='Change documented';summary='The records explicitly describe a change in the written instruction.';question='Confirm the change and its effective date with the source record.';}
     else if(events.length===1) {status='new';label='First documented';summary='Only one instruction was found. This does not establish when treatment began.';question='Confirm earlier history if needed.';}

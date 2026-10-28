@@ -1,10 +1,10 @@
-# PDF import in v0.3
+# PDF import in v0.4
 
 ## Try it
 
 Open **Add record → Try a sample PDF**. The sample contains two pages of fictional instructions. Select the medication lines beside the original page preview, acknowledge the visual check, and choose **Use selected lines**. Enter the document date and save. Use **Source records → Review extraction** to confirm the model's field suggestions.
 
-An original file is optional: choose **Import TXT or PDF** for your own typed, appropriately de-identified file. No file contents are uploaded. PDF.js, its worker, fonts, and related assets are served with the application, without a runtime CDN dependency.
+An original file is optional: choose **Import text, PDF, or photo** for your own typed, appropriately de-identified file. No file contents are uploaded. PDF.js, its worker, fonts, and related assets are served with the application, without a runtime CDN dependency.
 
 ## What is preserved
 
@@ -18,12 +18,12 @@ An original file is optional: choose **Import TXT or PDF** for your own typed, a
 ## Limits and explicit failure behavior
 
 - Maximum file size: 10 MB. Maximum pages: 10. Selected text limit: 15,000 characters.
-- This extracts an existing text layer. It does not perform OCR or read handwriting.
-- A PDF with no extractable text is rejected with an explanation.
+- Typed PDFs use an existing text layer by default. Choose **Read this page with OCR** for scanned pages or partial text layers; see [OCR import](OCR_IMPORT.md). Handwriting is unsupported.
+- A PDF with no extractable text opens in the preview with no selected lines. Run OCR on each relevant page or transcribe manually.
 - Mixed documents retain warnings for pages without text; comparisons remain provisional.
 - A page with some text can still contain an image-only medication section. Visual checking remains necessary; the presence of text does not prove complete extraction.
 - Large horizontal gaps split text into separate lines and produce a layout warning. Complex columns, tables, ligatures, hyphenation, and reading order can still be wrong.
-- Rotated/vertical text is unsupported and rejects the import rather than silently dropping those items.
+- Rotated/vertical or unreadable text layers leave that page unread and flagged for OCR or manual transcription. Automatic rotation is not implemented.
 - Password-protected, damaged, oversized, and over-limit documents produce errors without overwriting existing editor text.
 - Selecting and visually checking text is separate from confirming extracted medication fields. Neither acknowledgement establishes clinical validity.
 

@@ -95,3 +95,10 @@ The browser app now includes a small learned action classifier, expanded field r
 ## Implemented milestone: v0.3
 
 Typed PDFs can now be imported locally with page previews and explicit line selection. Source filenames, hashes, pages, and extracted-line references accompany unchanged imported text. Mixed text/image-only documents retain unread-page warnings, and unsupported imports do not overwrite existing drafts. This is text-layer extraction, not OCR or clinical validation.
+
+
+## Implemented milestone: v0.4
+
+Printed English images (PNG/JPEG/WebP) and scanned PDF pages can now be read locally using pinned Tesseract.js LSTM assets. Reviewers correct line-level transcripts beside the original, then explicitly confirm the structured fields. Strict-looking OCR text is gated too. Exports retain raw OCR text, corrections, valid source rectangles, file hashes, and review history. Cancellation, timeout, unread content, and failed imports preserve uncertainty and existing drafts. See `docs/OCR_IMPORT.md`.
+
+OCR is an enabling input feature, not a claim of research novelty. The research contribution still needs evidence from a frozen, pharmacist-reviewed evaluation of temporal reconciliation, source attribution, uncertainty, and unsupported conclusions. Handwriting and independent clinical validation remain outside this release.

@@ -27,5 +27,7 @@ jobs:
           node --check dist/classifier.js
           node --check dist/pdf-import.js
           node --check dist/pdf-layout.js
+          node --check dist/ocr.js
+          node --check dist/ocr-worker.js
       - name: Verify reproducible development evaluation
         run: npm run evaluate:check

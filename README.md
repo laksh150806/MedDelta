@@ -4,7 +4,7 @@ A working medication-record comparison prototype. Open dated source records, ins
 
 ![MedDelta medication review workspace with fictional sample records](docs/preview.png)
 
-**Status:** Working v0.3 prototype with 37 automated behavioral tests, typed-PDF import, a local action classifier, and source-linked extraction review. Pharmacist-reviewed validation is still pending.
+**Status:** Working v0.4 prototype with 51 automated behavioral tests, local printed-English OCR, PDF/photo import, a local action classifier, and source-linked extraction review. Pharmacist-reviewed validation is still pending.
 
 **Hosted demo:** https://meddelta-review.lakshnagori1508.chatgpt.site (private to the project owner). Everyone with this repository can run the same application locally.
 
@@ -29,9 +29,11 @@ npm test
 ## What works
 
 - Four fictional sample cases and editable dated records.
-- Plain-text import and local typed-PDF import (up to 10 MB / 10 pages).
+- Plain-text, PDF, PNG, JPEG, and WebP import (documents/images up to 10 MB; PDFs up to 10 pages).
+- Local printed-English OCR with editable transcriptions and mandatory field confirmation.
+- Raw OCR text, user corrections, original image coordinates, and source file hashes retained in exports.
 - PDF page preview, explicit line selection, and original-file page references.
-- A built-in two-page fictional PDF to try without supplying a document.
+- A built-in fictional printed scan and a two-page typed PDF to try without supplying a document.
 - A strict parser plus expanded extraction using a local action classifier and field rules.
 - A review screen to correct and explicitly confirm expanded extracted fields.
 - Source-linked extraction history, reviewer identity, and timestamps.
@@ -52,7 +54,7 @@ Change Metformin 500 mg orally twice daily.
 Stop Cetirizine.
 ```
 
-Matching uses the exact normalized medicine name, not brand-to-ingredient resolution. Written amounts are not automatically classified as strength or administered dose. Expanded wording such as `Please increase Metformin to 500 mg by mouth twice a day.` can be reviewed using **Source records → Review extraction**. Expanded suggestions do not enter the comparison until the reviewer confirms them. Qualifiers outside the supported grammar are rejected rather than discarded. Missing route information remains unspecified. Document dates order evidence; clinical effective dates are not inferred. A later instruction does not automatically resolve an earlier conflict. Reviewer notes do not modify the original findings or certify safety.
+Matching uses the exact normalized medicine name, not brand-to-ingredient resolution. Written amounts are not automatically classified as strength or administered dose. Expanded wording such as `Please increase Metformin to 500 mg by mouth twice a day.` can be reviewed using **Source records → Review extraction**. Expanded suggestions and all instructions in OCR-derived records do not enter the comparison until the reviewer confirms them. OCR can omit or misread content; a completeness warning remains after field confirmation. Qualifiers outside the supported grammar are rejected rather than discarded. Missing route information remains unspecified. Document dates order evidence; clinical effective dates are not inferred. A later instruction does not automatically resolve an earlier conflict. Reviewer notes do not modify the original findings or certify safety.
 
 Use only fictional or appropriately de-identified records. Exported files contain source text and notes. There is no server-side patient database or analytics. The site host still receives ordinary page requests.
 
@@ -65,16 +67,17 @@ Use only fictional or appropriately de-identified records. Exported files contai
 - `scripts/train_action_model.py`: optional model training.
 - `scripts/evaluate.mjs`: reproducible synthetic development evaluation.
 - `dist/pdf-import.js`, `dist/pdf-layout.js`: local PDF reading and conservative layout reconstruction.
-- `dist/provenance.js`: original-file page references for unchanged imported text.
-- `dist/vendor/pdfjs`: pinned PDF.js assets and upstream licenses.
-- `scripts/smoke_pdf.py`: browser integration checks using fictional PDF fixtures.
+- `dist/ocr.js`, `dist/ocr-worker.js`: bounded local image decoding and cancellable printed-English OCR.
+- `dist/provenance.js`: original-file page references, OCR correction evidence, and review gating.
+- `dist/vendor/pdfjs`, `dist/vendor/tesseract`: pinned PDF/OCR assets, English weights, integrity metadata, and upstream licenses.
+- `scripts/smoke_pdf.py`, `scripts/smoke_ocr.py`: real browser integration checks using fictional fixtures.
 - `dist/index.html`, `dist/styles.css`: responsive interface.
 - `tests/engine.test.js`: core behavioral checks.
 - `server.js`: dependency-free development server.
 
 ## Next research milestone
 
-Use the project brief to establish a pharmacist-reviewed annotation rubric and separate development/evaluation cases. Compare the extraction pipeline with expanded-rule and language-model baselines, and measure unsupported conclusions as well as coverage. OCR and broader medication matching are future work, not features in this release.
+Use the project brief to establish a pharmacist-reviewed annotation rubric and separate development/evaluation cases. Compare the extraction pipeline with expanded-rule and language-model baselines, and measure unsupported conclusions as well as coverage. Handwriting, multilingual extraction, and broader medication matching remain future work.
 
 See [PROJECT_BRIEF.md](PROJECT_BRIEF.md) for scope, evaluation design, prior work, and the semester plan.
 
@@ -103,4 +106,10 @@ Read [the model card](docs/MODEL_CARD.md) before interpreting the results. The s
 
 Choose **Add record → Try a sample PDF**, select the medication lines on each page, and acknowledge the visual check. Enter the document date, save, then review the extracted fields. PDFs stay in the browser tab.
 
-Read [PDF import behavior and limits](docs/PDF_IMPORT.md). Scanned PDFs and handwriting still need OCR, which is not included. Original PDF bytes are not part of exported JSON reports.
+Read [PDF import behavior and limits](docs/PDF_IMPORT.md). Original PDF bytes are not part of exported JSON reports.
+
+## Try photo and scanned-PDF import
+
+Choose **Add record → Try a printed scan → Read this page with OCR**. Correct the text beside the image, select the medication instructions, and acknowledge the visual check. Save with a document date, then confirm the structured fields in the review screen that opens.
+
+PNG, JPEG, WebP, and scanned PDF pages work with the same local OCR engine. Printed English only; handwriting is not supported. See [the OCR workflow, evidence, limits, and tests](docs/OCR_IMPORT.md).

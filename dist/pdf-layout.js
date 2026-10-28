@@ -31,5 +31,6 @@ export function selectedPdfText(pages,keys){
  const text=selected.map(line=>line.text).join('\n');
  if(!selected.length)throw new Error('Select at least one medication instruction.');
  if(text.length>15000)throw new Error('Selected text exceeds 15,000 characters. Import a smaller selection.');
+ if(selected.some(line=>!line.text.trim()||/[\r\n]/.test(line.text)||line.text.length>1500))throw new Error('Each selected line must contain one nonempty instruction of at most 1,500 characters.');
  return {text,lines:selected.map((line,i)=>({...line,recordLine:i+1}))};
 }

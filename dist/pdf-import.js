@@ -27,16 +27,16 @@ export async function openPdf(file,{signal,onProgress=()=>{}}={}){
   const pages=[];let total=0;
   for(let number=1;number<=document.numPages;number++){
    if(signal?.aborted)throw abortError();onProgress(`Reading page ${number} of ${document.numPages}…`);
-   const page=await document.getPage(number);const content=await page.getTextContent();const extracted=extractPageLines(content.items,number);
+   const page=await document.getPage(number);let extracted;
+   try{const content=await page.getTextContent();extracted=extractPageLines(content.items,number);}catch{extracted={lines:[],warnings:[`Page ${number} could not be read as selectable text. Preview it and try OCR or transcribe it manually.`]};}
    total+=extracted.lines.reduce((sum,line)=>sum+line.text.length,0);if(total>PDF_LIMITS.textCharacters)throw new Error('This PDF contains too much text for the prototype. Import a shorter document.');
-   pages.push({number,...extracted});
+   pages.push({number,method:extracted.lines.length?'pdf-text':'unread',...extracted});
   }
-  if(!pages.some(p=>p.lines.length))throw new Error('No selectable text was found. This PDF may be scanned or blank. OCR is not included yet; use a typed PDF or paste a checked transcription.');
   let renderTask=null,destroyed=false;
-  return {file,pages,sha256,pageCount:document.numPages,
-   async render(pageNumber,canvas){
+  return {file,pages,sha256,type:'pdf',pageCount:document.numPages,
+   async render(pageNumber,canvas,{ocr=false}={}){
     if(destroyed)throw abortError();if(renderTask){renderTask.cancel();try{await renderTask.promise;}catch{}}
-    const page=await document.getPage(pageNumber);const raw=page.getViewport({scale:1});const scale=Math.min(1.6,900/raw.width,1200/raw.height);const viewport=page.getViewport({scale});
+    const page=await document.getPage(pageNumber);const raw=page.getViewport({scale:1});const scale=Math.min(ocr?3:1.6,(ocr?2400:900)/raw.width,(ocr?3200:1200)/raw.height);const viewport=page.getViewport({scale});
     canvas.width=Math.ceil(viewport.width);canvas.height=Math.ceil(viewport.height);
     renderTask=page.render({canvasContext:canvas.getContext('2d'),canvas,viewport});
     try{await renderTask.promise;}catch(error){if(error.name!=='RenderingCancelledException')throw error;}

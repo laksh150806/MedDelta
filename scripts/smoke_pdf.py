@@ -41,14 +41,21 @@ with sync_playwright() as p:
     assert sorted(s['page'] for s in sources)==[1,1,2]
     assert not uploads,uploads
     page.locator('#add-record').click();page.locator('#record-text').fill('Preserve this draft.')
-    for file,expected in {'image-only.pdf':'No selectable text','locked.pdf':'password-protected','11-pages.pdf':'up to 10 pages','corrupt.pdf':'Invalid PDF'}.items():
+    for file,expected in {'locked.pdf':'password-protected','11-pages.pdf':'up to 10 pages','corrupt.pdf':'Invalid PDF'}.items():
         page.locator('#record-file').set_input_files(ROOT/'tests/fixtures/pdf'/file)
         page.wait_for_function("document.querySelector('#pdf-error').textContent.length > 0",timeout=15000)
         assert expected.lower() in page.locator('#pdf-error').inner_text().lower(),file
         page.locator('#pdf-dialog [data-close="pdf-dialog"]').first.click()
         assert page.locator('#record-text').input_value()=='Preserve this draft.'
+    page.locator('#record-file').set_input_files(ROOT/'tests/fixtures/pdf/image-only.pdf')
+    page.locator('#pdf-ocr').wait_for()
+    assert page.locator('[data-pdf-key]').count()==0
+    assert page.locator('#pdf-apply').is_disabled()
+    page.locator('#pdf-dialog [data-close="pdf-dialog"]').first.click()
+    assert page.locator('#record-text').input_value()=='Preserve this draft.'
     page.locator('#record-file').set_input_files(ROOT/'tests/fixtures/pdf/mixed.pdf')
     page.locator('[data-pdf-key="1:4"]').wait_for()
+    page.locator('#pdf-warnings summary').click()
     assert 'Page 2 has no extractable text' in page.locator('#pdf-warnings').inner_text()
     page.locator('[data-pdf-key="1:4"]').check();page.locator('#pdf-checked').check();page.locator('#pdf-apply').click()
     page.locator('#record-title').fill('Mixed PDF example');page.locator('#record-date').fill('2026-09-19')
