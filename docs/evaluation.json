@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "0.5.0",
   "scope": "Synthetic development benchmark, not independent clinical validation. Action evaluation cue families are absent from classifier training; parser rules were developed for these supported constructions. No claim of real-world generalization.",
   "trainingCueCount": 35,
   "evaluationCueCount": 10,

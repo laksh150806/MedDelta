@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "meddelta-temporal-v1",
+  "frozenOn": "2026-10-29",
+  "engineAtDesign": "0e21aa849c388d4385ad1fd1aaa828da937451e9",
+  "status": "Frozen synthetic challenge set; developer-authored after inspecting the implementation. Not an independent held-out test.",
+  "splitPolicy": "8 development cases / 24 evaluation cases; family identifiers are disjoint across partitions. No tuning of the comparison algorithm on this evaluation is part of v0.5.",
+  "files": {
+    "cases.json": "5857d50bedecd06742b91be7ca18f5b44fa338337bf00371c2348556e2f20428",
+    "reference-labels.json": "46c6be1fbd3000dbe0e504f4cb7e010da0645f86d6e4f7be4bbfb7f341a32c7e"
+  }
+}

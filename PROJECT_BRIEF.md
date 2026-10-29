@@ -102,3 +102,10 @@ Typed PDFs can now be imported locally with page previews and explicit line sele
 Printed English images (PNG/JPEG/WebP) and scanned PDF pages can now be read locally using pinned Tesseract.js LSTM assets. Reviewers correct line-level transcripts beside the original, then explicitly confirm the structured fields. Strict-looking OCR text is gated too. Exports retain raw OCR text, corrections, valid source rectangles, file hashes, and review history. Cancellation, timeout, unread content, and failed imports preserve uncertainty and existing drafts. See `docs/OCR_IMPORT.md`.
 
 OCR is an enabling input feature, not a claim of research novelty. The research contribution still needs evidence from a frozen, pharmacist-reviewed evaluation of temporal reconciliation, source attribution, uncertainty, and unsupported conclusions. Handwriting and independent clinical validation remain outside this release.
+
+
+## Implemented milestone: v0.5
+
+A frozen, developer-authored temporal challenge now contains 8 practice and 24 evaluation packets, with proposed labels, rationales, citations, and file hashes. Full history and a latest-two-record baseline are scored with identical parsing/abstention rules. Full history matches 20/24 proposed evaluation labels at 16/24 coverage; the baseline matches 18/24 at the same coverage. Equivalent units and expanded wording expose retained failures. This is constructed text evaluation, not independent clinical validation.
+
+The browser Validation lab collects reviewer judgments before prediction reveal, validates review-file imports, preserves citations and revisions, and records exposure. A printable source-only guide/packet and blank CSV support review outside the private hosted site. Pharmacist review and independent adjudication are still pending. See `docs/VALIDATION_PROTOCOL.md`.

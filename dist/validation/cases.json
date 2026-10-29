@@ -1,0 +1,689 @@
+{
+  "schemaVersion": 1,
+  "id": "meddelta-temporal-v1",
+  "authorship": "Developer-authored fictional challenge cases; not clinical data or independent validation.",
+  "cases": [
+    {
+      "id": "D01",
+      "split": "development",
+      "family": "simple-agreement",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "D02",
+      "split": "development",
+      "family": "simple-agreement",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "D03",
+      "split": "development",
+      "family": "simple-change",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Change Alphamed 10 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "D04",
+      "split": "development",
+      "family": "simple-change",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Change Alphamed 5 mg orally twice daily."
+        }
+      ]
+    },
+    {
+      "id": "D05",
+      "split": "development",
+      "family": "simple-stop",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Stop Alphamed."
+        }
+      ]
+    },
+    {
+      "id": "D06",
+      "split": "development",
+      "family": "simple-stop",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Stop Alphamed.\nContinue Betamed 5 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "D07",
+      "split": "development",
+      "family": "simple-omission",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily.\nContinue Betamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Continue Betamed 5 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "D08",
+      "split": "development",
+      "family": "simple-omission",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Continue Gammamed 5 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "E01",
+      "split": "evaluation",
+      "family": "history-conflict",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Continue Alphamed 10 mg orally once daily."
+        },
+        {
+          "id": "r3",
+          "title": "Record 3",
+          "date": "2026-06-25",
+          "text": "Change Alphamed 10 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "E02",
+      "split": "evaluation",
+      "family": "history-conflict",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Continue Alphamed 10 mg orally once daily."
+        },
+        {
+          "id": "r3",
+          "title": "Record 3",
+          "date": "2026-06-25",
+          "text": "Change Alphamed 20 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "E03",
+      "split": "evaluation",
+      "family": "history-conflict",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Continue Alphamed 10 mg orally once daily."
+        },
+        {
+          "id": "r3",
+          "title": "Record 3",
+          "date": "2026-06-25",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "E04",
+      "split": "evaluation",
+      "family": "same-date",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-12",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Continue Alphamed 10 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "E05",
+      "split": "evaluation",
+      "family": "same-date",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-25",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r3",
+          "title": "Record 3",
+          "date": "2026-06-25",
+          "text": "Change Alphamed 10 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "E06",
+      "split": "evaluation",
+      "family": "same-date",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-12",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "E07",
+      "split": "evaluation",
+      "family": "restart",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Stop Alphamed."
+        },
+        {
+          "id": "r3",
+          "title": "Record 3",
+          "date": "2026-06-25",
+          "text": "Start Alphamed 5 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "E08",
+      "split": "evaluation",
+      "family": "restart",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Stop Alphamed."
+        },
+        {
+          "id": "r3",
+          "title": "Record 3",
+          "date": "2026-06-25",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "E09",
+      "split": "evaluation",
+      "family": "restart",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Stop Alphamed."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Stop Alphamed."
+        }
+      ]
+    },
+    {
+      "id": "E10",
+      "split": "evaluation",
+      "family": "incomplete-instruction",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Hold Alphamed until the next review."
+        }
+      ]
+    },
+    {
+      "id": "E11",
+      "split": "evaluation",
+      "family": "incomplete-instruction",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Alphamed 5 mg; frequency is unreadable."
+        }
+      ]
+    },
+    {
+      "id": "E12",
+      "split": "evaluation",
+      "family": "incomplete-instruction",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 10 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Reduce Alphamed from 10 mg to 5 mg after three days, then stop."
+        }
+      ]
+    },
+    {
+      "id": "E13",
+      "split": "evaluation",
+      "family": "document-date",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-02-30",
+          "text": "Change Alphamed 10 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "E14",
+      "split": "evaluation",
+      "family": "document-date",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "",
+          "text": "Change Alphamed 10 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "E15",
+      "split": "evaluation",
+      "family": "document-date",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-25",
+          "text": "Change Alphamed 10 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "E16",
+      "split": "evaluation",
+      "family": "amount-route",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 1 g orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Continue Alphamed 1000 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "E17",
+      "split": "evaluation",
+      "family": "amount-route",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Continue Alphamed 5 mg topically once daily."
+        }
+      ]
+    },
+    {
+      "id": "E18",
+      "split": "evaluation",
+      "family": "amount-route",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 0.5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "E19",
+      "split": "evaluation",
+      "family": "record-scope",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily.\nContinue Betamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Change Alphamed 10 mg orally once daily.\nContinue Betamed 5 mg orally once daily."
+        },
+        {
+          "id": "r3",
+          "title": "Record 3",
+          "date": "2026-06-25",
+          "text": "Continue Betamed 5 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "E20",
+      "split": "evaluation",
+      "family": "record-scope",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Stop Alphamed."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Continue Betamed 5 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "E21",
+      "split": "evaluation",
+      "family": "record-scope",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Betamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        }
+      ]
+    },
+    {
+      "id": "E22",
+      "split": "evaluation",
+      "family": "expanded-wording",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Please increase Alphamed to 10 mg by mouth once a day."
+        }
+      ]
+    },
+    {
+      "id": "E23",
+      "split": "evaluation",
+      "family": "expanded-wording",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Please discontinue taking Alphamed."
+        }
+      ]
+    },
+    {
+      "id": "E24",
+      "split": "evaluation",
+      "family": "expanded-wording",
+      "target": "Alphamed",
+      "records": [
+        {
+          "id": "r1",
+          "title": "Record 1",
+          "date": "2026-06-01",
+          "text": "Continue Alphamed 5 mg orally once daily."
+        },
+        {
+          "id": "r2",
+          "title": "Record 2",
+          "date": "2026-06-12",
+          "text": "Do not stop Alphamed. Continue Alphamed 5 mg orally once daily."
+        }
+      ]
+    }
+  ]
+}

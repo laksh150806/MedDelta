@@ -1,6 +1,6 @@
 {
   "name": "meddelta",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,6 +8,8 @@
     "start": "node server.js",
     "evaluate": "node scripts/evaluate.mjs",
     "evaluate:check": "node scripts/evaluate.mjs --check",
-    "train": "python scripts/train_action_model.py"
+    "train": "python scripts/train_action_model.py",
+    "benchmark": "node scripts/benchmark.mjs",
+    "benchmark:check": "node scripts/benchmark.mjs --check"
   }
 }

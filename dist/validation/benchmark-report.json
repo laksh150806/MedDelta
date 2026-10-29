@@ -1,0 +1,2108 @@
+{
+  "applicationVersion": "0.5.0",
+  "engineSha256": "eaec2fe87307e654da5863e835bb83043ad635f9ef41497511293e3bc26fd084",
+  "protocol": "temporal-review-1",
+  "datasetId": "meddelta-temporal-v1",
+  "datasetHashes": {
+    "cases.json": "5857d50bedecd06742b91be7ca18f5b44fa338337bf00371c2348556e2f20428",
+    "reference-labels.json": "46c6be1fbd3000dbe0e504f4cb7e010da0645f86d6e4f7be4bbfb7f341a32c7e"
+  },
+  "referenceStatus": "Proposed developer reference labels; pharmacist review pending.",
+  "scope": "Developer-authored fictional text challenge; no pharmacist validation. Engine outputs with any source issue are counted as abstentions. No OCR or human confirmations are simulated. This is not independent clinical performance.",
+  "methods": {
+    "full": "All supplied records; current strict parser and comparison rules.",
+    "pair": "Same parser/rules, restricted to the two most recent dated records. Invalid dates still force abstention."
+  },
+  "results": {
+    "development": {
+      "full": {
+        "total": 8,
+        "exactMatches": 8,
+        "exactAgreement": 1,
+        "covered": 8,
+        "coverage": 1,
+        "abstentions": 0,
+        "correctAmongCovered": 8,
+        "agreementAmongCovered": 1,
+        "wrongNonAbstaining": 0,
+        "conflict": {
+          "truePositive": 0,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "precision": null,
+          "recall": null
+        },
+        "unsupportedResolution": {
+          "count": 0,
+          "uncertainReferences": 2,
+          "rate": 0
+        },
+        "sourceTextAlignment": {
+          "matched": 14,
+          "total": 14,
+          "rate": 1
+        },
+        "confusion": {
+          "consistent": {
+            "consistent": 2,
+            "change": 0,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 0
+          },
+          "change": {
+            "consistent": 0,
+            "change": 2,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 0
+          },
+          "conflict": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 0
+          },
+          "missing": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 0,
+            "missing": 2,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 0
+          },
+          "stopped": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 2,
+            "new": 0,
+            "unresolved": 0
+          },
+          "new": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 0
+          },
+          "unresolved": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 0
+          }
+        }
+      },
+      "pair": {
+        "total": 8,
+        "exactMatches": 8,
+        "exactAgreement": 1,
+        "covered": 8,
+        "coverage": 1,
+        "abstentions": 0,
+        "correctAmongCovered": 8,
+        "agreementAmongCovered": 1,
+        "wrongNonAbstaining": 0,
+        "conflict": {
+          "truePositive": 0,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "precision": null,
+          "recall": null
+        },
+        "unsupportedResolution": {
+          "count": 0,
+          "uncertainReferences": 2,
+          "rate": 0
+        },
+        "sourceTextAlignment": {
+          "matched": 14,
+          "total": 14,
+          "rate": 1
+        },
+        "confusion": {
+          "consistent": {
+            "consistent": 2,
+            "change": 0,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 0
+          },
+          "change": {
+            "consistent": 0,
+            "change": 2,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 0
+          },
+          "conflict": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 0
+          },
+          "missing": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 0,
+            "missing": 2,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 0
+          },
+          "stopped": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 2,
+            "new": 0,
+            "unresolved": 0
+          },
+          "new": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 0
+          },
+          "unresolved": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 0
+          }
+        }
+      }
+    },
+    "evaluation": {
+      "full": {
+        "total": 24,
+        "exactMatches": 20,
+        "exactAgreement": 0.8333333333333334,
+        "covered": 16,
+        "coverage": 0.6666666666666666,
+        "abstentions": 8,
+        "correctAmongCovered": 15,
+        "agreementAmongCovered": 0.9375,
+        "wrongNonAbstaining": 1,
+        "conflict": {
+          "truePositive": 8,
+          "falsePositive": 1,
+          "falseNegative": 0,
+          "precision": 0.8888888888888888,
+          "recall": 1
+        },
+        "unsupportedResolution": {
+          "count": 0,
+          "uncertainReferences": 14,
+          "rate": 0
+        },
+        "sourceTextAlignment": {
+          "matched": 42,
+          "total": 42,
+          "rate": 1
+        },
+        "confusion": {
+          "consistent": {
+            "consistent": 1,
+            "change": 0,
+            "conflict": 1,
+            "missing": 0,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 1
+          },
+          "change": {
+            "consistent": 0,
+            "change": 2,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 1
+          },
+          "conflict": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 8,
+            "missing": 0,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 0
+          },
+          "missing": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 0,
+            "missing": 1,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 0
+          },
+          "stopped": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 2,
+            "new": 0,
+            "unresolved": 1
+          },
+          "new": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 0,
+            "new": 1,
+            "unresolved": 0
+          },
+          "unresolved": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 5
+          }
+        }
+      },
+      "pair": {
+        "total": 24,
+        "exactMatches": 18,
+        "exactAgreement": 0.75,
+        "covered": 16,
+        "coverage": 0.6666666666666666,
+        "abstentions": 8,
+        "correctAmongCovered": 13,
+        "agreementAmongCovered": 0.8125,
+        "wrongNonAbstaining": 3,
+        "conflict": {
+          "truePositive": 6,
+          "falsePositive": 1,
+          "falseNegative": 2,
+          "precision": 0.8571428571428571,
+          "recall": 0.75
+        },
+        "unsupportedResolution": {
+          "count": 2,
+          "uncertainReferences": 14,
+          "rate": 0.14285714285714285
+        },
+        "sourceTextAlignment": {
+          "matched": 35,
+          "total": 35,
+          "rate": 1
+        },
+        "confusion": {
+          "consistent": {
+            "consistent": 1,
+            "change": 0,
+            "conflict": 1,
+            "missing": 0,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 1
+          },
+          "change": {
+            "consistent": 0,
+            "change": 2,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 1
+          },
+          "conflict": {
+            "consistent": 1,
+            "change": 1,
+            "conflict": 6,
+            "missing": 0,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 0
+          },
+          "missing": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 0,
+            "missing": 1,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 0
+          },
+          "stopped": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 2,
+            "new": 0,
+            "unresolved": 1
+          },
+          "new": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 0,
+            "new": 1,
+            "unresolved": 0
+          },
+          "unresolved": {
+            "consistent": 0,
+            "change": 0,
+            "conflict": 0,
+            "missing": 0,
+            "stopped": 0,
+            "new": 0,
+            "unresolved": 5
+          }
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "caseId": "D01",
+      "split": "development",
+      "family": "simple-agreement",
+      "expected": "consistent",
+      "full": {
+        "label": "consistent",
+        "rawStatus": "consistent",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      },
+      "pair": {
+        "label": "consistent",
+        "rawStatus": "consistent",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "D02",
+      "split": "development",
+      "family": "simple-agreement",
+      "expected": "consistent",
+      "full": {
+        "label": "consistent",
+        "rawStatus": "consistent",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      },
+      "pair": {
+        "label": "consistent",
+        "rawStatus": "consistent",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "D03",
+      "split": "development",
+      "family": "simple-change",
+      "expected": "change",
+      "full": {
+        "label": "change",
+        "rawStatus": "change",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Change Alphamed 10 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      },
+      "pair": {
+        "label": "change",
+        "rawStatus": "change",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Change Alphamed 10 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "D04",
+      "split": "development",
+      "family": "simple-change",
+      "expected": "change",
+      "full": {
+        "label": "change",
+        "rawStatus": "change",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Change Alphamed 5 mg orally twice daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      },
+      "pair": {
+        "label": "change",
+        "rawStatus": "change",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Change Alphamed 5 mg orally twice daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "D05",
+      "split": "development",
+      "family": "simple-stop",
+      "expected": "stopped",
+      "full": {
+        "label": "stopped",
+        "rawStatus": "stopped",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Stop Alphamed."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      },
+      "pair": {
+        "label": "stopped",
+        "rawStatus": "stopped",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Stop Alphamed."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "D06",
+      "split": "development",
+      "family": "simple-stop",
+      "expected": "stopped",
+      "full": {
+        "label": "stopped",
+        "rawStatus": "stopped",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Stop Alphamed."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      },
+      "pair": {
+        "label": "stopped",
+        "rawStatus": "stopped",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Stop Alphamed."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "D07",
+      "split": "development",
+      "family": "simple-omission",
+      "expected": "missing",
+      "full": {
+        "label": "missing",
+        "rawStatus": "missing",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      },
+      "pair": {
+        "label": "missing",
+        "rawStatus": "missing",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      }
+    },
+    {
+      "caseId": "D08",
+      "split": "development",
+      "family": "simple-omission",
+      "expected": "missing",
+      "full": {
+        "label": "missing",
+        "rawStatus": "missing",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      },
+      "pair": {
+        "label": "missing",
+        "rawStatus": "missing",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      }
+    },
+    {
+      "caseId": "E01",
+      "split": "evaluation",
+      "family": "history-conflict",
+      "expected": "conflict",
+      "full": {
+        "label": "conflict",
+        "rawStatus": "conflict",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2",
+          "r3"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 10 mg orally once daily."
+          },
+          {
+            "recordId": "r3",
+            "line": 1,
+            "text": "Change Alphamed 10 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 3,
+        "sourceTextCount": 3
+      },
+      "pair": {
+        "label": "consistent",
+        "rawStatus": "consistent",
+        "abstained": false,
+        "recordsUsed": [
+          "r2",
+          "r3"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 10 mg orally once daily."
+          },
+          {
+            "recordId": "r3",
+            "line": 1,
+            "text": "Change Alphamed 10 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "E02",
+      "split": "evaluation",
+      "family": "history-conflict",
+      "expected": "conflict",
+      "full": {
+        "label": "conflict",
+        "rawStatus": "conflict",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2",
+          "r3"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 10 mg orally once daily."
+          },
+          {
+            "recordId": "r3",
+            "line": 1,
+            "text": "Change Alphamed 20 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 3,
+        "sourceTextCount": 3
+      },
+      "pair": {
+        "label": "change",
+        "rawStatus": "change",
+        "abstained": false,
+        "recordsUsed": [
+          "r2",
+          "r3"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 10 mg orally once daily."
+          },
+          {
+            "recordId": "r3",
+            "line": 1,
+            "text": "Change Alphamed 20 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "E03",
+      "split": "evaluation",
+      "family": "history-conflict",
+      "expected": "conflict",
+      "full": {
+        "label": "conflict",
+        "rawStatus": "conflict",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2",
+          "r3"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 10 mg orally once daily."
+          },
+          {
+            "recordId": "r3",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 3,
+        "sourceTextCount": 3
+      },
+      "pair": {
+        "label": "conflict",
+        "rawStatus": "conflict",
+        "abstained": false,
+        "recordsUsed": [
+          "r2",
+          "r3"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 10 mg orally once daily."
+          },
+          {
+            "recordId": "r3",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "E04",
+      "split": "evaluation",
+      "family": "same-date",
+      "expected": "conflict",
+      "full": {
+        "label": "conflict",
+        "rawStatus": "conflict",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 10 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      },
+      "pair": {
+        "label": "conflict",
+        "rawStatus": "conflict",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 10 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "E05",
+      "split": "evaluation",
+      "family": "same-date",
+      "expected": "conflict",
+      "full": {
+        "label": "conflict",
+        "rawStatus": "conflict",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2",
+          "r3"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r3",
+            "line": 1,
+            "text": "Change Alphamed 10 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 3,
+        "sourceTextCount": 3
+      },
+      "pair": {
+        "label": "conflict",
+        "rawStatus": "conflict",
+        "abstained": false,
+        "recordsUsed": [
+          "r2",
+          "r3"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r3",
+            "line": 1,
+            "text": "Change Alphamed 10 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "E06",
+      "split": "evaluation",
+      "family": "same-date",
+      "expected": "consistent",
+      "full": {
+        "label": "consistent",
+        "rawStatus": "consistent",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      },
+      "pair": {
+        "label": "consistent",
+        "rawStatus": "consistent",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "E07",
+      "split": "evaluation",
+      "family": "restart",
+      "expected": "change",
+      "full": {
+        "label": "change",
+        "rawStatus": "change",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2",
+          "r3"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Stop Alphamed."
+          },
+          {
+            "recordId": "r3",
+            "line": 1,
+            "text": "Start Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 3,
+        "sourceTextCount": 3
+      },
+      "pair": {
+        "label": "change",
+        "rawStatus": "change",
+        "abstained": false,
+        "recordsUsed": [
+          "r2",
+          "r3"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Stop Alphamed."
+          },
+          {
+            "recordId": "r3",
+            "line": 1,
+            "text": "Start Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "E08",
+      "split": "evaluation",
+      "family": "restart",
+      "expected": "conflict",
+      "full": {
+        "label": "conflict",
+        "rawStatus": "conflict",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2",
+          "r3"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Stop Alphamed."
+          },
+          {
+            "recordId": "r3",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 3,
+        "sourceTextCount": 3
+      },
+      "pair": {
+        "label": "conflict",
+        "rawStatus": "conflict",
+        "abstained": false,
+        "recordsUsed": [
+          "r2",
+          "r3"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Stop Alphamed."
+          },
+          {
+            "recordId": "r3",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "E09",
+      "split": "evaluation",
+      "family": "restart",
+      "expected": "stopped",
+      "full": {
+        "label": "stopped",
+        "rawStatus": "stopped",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Stop Alphamed."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Stop Alphamed."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      },
+      "pair": {
+        "label": "stopped",
+        "rawStatus": "stopped",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Stop Alphamed."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Stop Alphamed."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "E10",
+      "split": "evaluation",
+      "family": "incomplete-instruction",
+      "expected": "unresolved",
+      "full": {
+        "label": "unresolved",
+        "rawStatus": "missing",
+        "abstained": true,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "reason": "This instruction contains an action or qualifier outside the strict parser. Review extraction or leave it unresolved."
+          }
+        ],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      },
+      "pair": {
+        "label": "unresolved",
+        "rawStatus": "missing",
+        "abstained": true,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "reason": "This instruction contains an action or qualifier outside the strict parser. Review extraction or leave it unresolved."
+          }
+        ],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      }
+    },
+    {
+      "caseId": "E11",
+      "split": "evaluation",
+      "family": "incomplete-instruction",
+      "expected": "unresolved",
+      "full": {
+        "label": "unresolved",
+        "rawStatus": "missing",
+        "abstained": true,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "reason": "Not fully understood. Use one instruction per line, such as “Continue Metformin 500 mg orally twice daily”. Tapers, combinations, durations, and other qualifiers need manual review."
+          }
+        ],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      },
+      "pair": {
+        "label": "unresolved",
+        "rawStatus": "missing",
+        "abstained": true,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "reason": "Not fully understood. Use one instruction per line, such as “Continue Metformin 500 mg orally twice daily”. Tapers, combinations, durations, and other qualifiers need manual review."
+          }
+        ],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      }
+    },
+    {
+      "caseId": "E12",
+      "split": "evaluation",
+      "family": "incomplete-instruction",
+      "expected": "unresolved",
+      "full": {
+        "label": "unresolved",
+        "rawStatus": "missing",
+        "abstained": true,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "reason": "This instruction contains an action or qualifier outside the strict parser. Review extraction or leave it unresolved."
+          }
+        ],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 10 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      },
+      "pair": {
+        "label": "unresolved",
+        "rawStatus": "missing",
+        "abstained": true,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "reason": "This instruction contains an action or qualifier outside the strict parser. Review extraction or leave it unresolved."
+          }
+        ],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 10 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      }
+    },
+    {
+      "caseId": "E13",
+      "split": "evaluation",
+      "family": "document-date",
+      "expected": "unresolved",
+      "full": {
+        "label": "unresolved",
+        "rawStatus": null,
+        "abstained": true,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [
+          {
+            "recordId": "r2",
+            "line": 0,
+            "reason": "A valid document date is required before comparison."
+          }
+        ],
+        "evidence": [],
+        "sourceTextAligned": 0,
+        "sourceTextCount": 0
+      },
+      "pair": {
+        "label": "unresolved",
+        "rawStatus": null,
+        "abstained": true,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [
+          {
+            "recordId": "r2",
+            "line": 0,
+            "reason": "A valid document date is required before comparison."
+          }
+        ],
+        "evidence": [],
+        "sourceTextAligned": 0,
+        "sourceTextCount": 0
+      }
+    },
+    {
+      "caseId": "E14",
+      "split": "evaluation",
+      "family": "document-date",
+      "expected": "unresolved",
+      "full": {
+        "label": "unresolved",
+        "rawStatus": null,
+        "abstained": true,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [
+          {
+            "recordId": "r2",
+            "line": 0,
+            "reason": "A valid document date is required before comparison."
+          }
+        ],
+        "evidence": [],
+        "sourceTextAligned": 0,
+        "sourceTextCount": 0
+      },
+      "pair": {
+        "label": "unresolved",
+        "rawStatus": null,
+        "abstained": true,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [
+          {
+            "recordId": "r2",
+            "line": 0,
+            "reason": "A valid document date is required before comparison."
+          }
+        ],
+        "evidence": [],
+        "sourceTextAligned": 0,
+        "sourceTextCount": 0
+      }
+    },
+    {
+      "caseId": "E15",
+      "split": "evaluation",
+      "family": "document-date",
+      "expected": "change",
+      "full": {
+        "label": "change",
+        "rawStatus": "change",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Change Alphamed 10 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      },
+      "pair": {
+        "label": "change",
+        "rawStatus": "change",
+        "abstained": false,
+        "recordsUsed": [
+          "r2",
+          "r1"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Change Alphamed 10 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "E16",
+      "split": "evaluation",
+      "family": "amount-route",
+      "expected": "consistent",
+      "full": {
+        "label": "conflict",
+        "rawStatus": "conflict",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 1 g orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 1000 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      },
+      "pair": {
+        "label": "conflict",
+        "rawStatus": "conflict",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 1 g orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 1000 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "E17",
+      "split": "evaluation",
+      "family": "amount-route",
+      "expected": "conflict",
+      "full": {
+        "label": "conflict",
+        "rawStatus": "conflict",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg topically once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      },
+      "pair": {
+        "label": "conflict",
+        "rawStatus": "conflict",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg topically once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "E18",
+      "split": "evaluation",
+      "family": "amount-route",
+      "expected": "conflict",
+      "full": {
+        "label": "conflict",
+        "rawStatus": "conflict",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 0.5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      },
+      "pair": {
+        "label": "conflict",
+        "rawStatus": "conflict",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 0.5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      }
+    },
+    {
+      "caseId": "E19",
+      "split": "evaluation",
+      "family": "record-scope",
+      "expected": "missing",
+      "full": {
+        "label": "missing",
+        "rawStatus": "missing",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2",
+          "r3"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          },
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Change Alphamed 10 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 2,
+        "sourceTextCount": 2
+      },
+      "pair": {
+        "label": "missing",
+        "rawStatus": "missing",
+        "abstained": false,
+        "recordsUsed": [
+          "r2",
+          "r3"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Change Alphamed 10 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      }
+    },
+    {
+      "caseId": "E20",
+      "split": "evaluation",
+      "family": "record-scope",
+      "expected": "stopped",
+      "full": {
+        "label": "stopped",
+        "rawStatus": "stopped",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Stop Alphamed."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      },
+      "pair": {
+        "label": "stopped",
+        "rawStatus": "stopped",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Stop Alphamed."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      }
+    },
+    {
+      "caseId": "E21",
+      "split": "evaluation",
+      "family": "record-scope",
+      "expected": "new",
+      "full": {
+        "label": "new",
+        "rawStatus": "new",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      },
+      "pair": {
+        "label": "new",
+        "rawStatus": "new",
+        "abstained": false,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [],
+        "evidence": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      }
+    },
+    {
+      "caseId": "E22",
+      "split": "evaluation",
+      "family": "expanded-wording",
+      "expected": "change",
+      "full": {
+        "label": "unresolved",
+        "rawStatus": "missing",
+        "abstained": true,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "reason": "This instruction contains an action or qualifier outside the strict parser. Review extraction or leave it unresolved."
+          }
+        ],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      },
+      "pair": {
+        "label": "unresolved",
+        "rawStatus": "missing",
+        "abstained": true,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "reason": "This instruction contains an action or qualifier outside the strict parser. Review extraction or leave it unresolved."
+          }
+        ],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      }
+    },
+    {
+      "caseId": "E23",
+      "split": "evaluation",
+      "family": "expanded-wording",
+      "expected": "stopped",
+      "full": {
+        "label": "unresolved",
+        "rawStatus": "missing",
+        "abstained": true,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "reason": "This instruction contains an action or qualifier outside the strict parser. Review extraction or leave it unresolved."
+          }
+        ],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      },
+      "pair": {
+        "label": "unresolved",
+        "rawStatus": "missing",
+        "abstained": true,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "reason": "This instruction contains an action or qualifier outside the strict parser. Review extraction or leave it unresolved."
+          }
+        ],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      }
+    },
+    {
+      "caseId": "E24",
+      "split": "evaluation",
+      "family": "expanded-wording",
+      "expected": "consistent",
+      "full": {
+        "label": "unresolved",
+        "rawStatus": "missing",
+        "abstained": true,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "reason": "This instruction contains an action or qualifier outside the strict parser. Review extraction or leave it unresolved."
+          }
+        ],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      },
+      "pair": {
+        "label": "unresolved",
+        "rawStatus": "missing",
+        "abstained": true,
+        "recordsUsed": [
+          "r1",
+          "r2"
+        ],
+        "issues": [
+          {
+            "recordId": "r2",
+            "line": 1,
+            "reason": "This instruction contains an action or qualifier outside the strict parser. Review extraction or leave it unresolved."
+          }
+        ],
+        "evidence": [
+          {
+            "recordId": "r1",
+            "line": 1,
+            "text": "Continue Alphamed 5 mg orally once daily."
+          }
+        ],
+        "sourceTextAligned": 1,
+        "sourceTextCount": 1
+      }
+    }
+  ]
+}

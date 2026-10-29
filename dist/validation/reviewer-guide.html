@@ -1,0 +1,220 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MedDelta — Reviewer guide and fictional packets</title><link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="lab.css"></head><body><main class="guide-main"><a class="text-button no-print" href="../validation.html">← Validation lab</a><div class="eyebrow" style="margin-top:25px">SOURCE-ONLY REVIEW PACK · PROTOCOL 1</div><h1>Review the evidence first.</h1><p>MedDelta temporal dataset v1 · 32 fictional packets · 29 October 2026</p><div class="notice"><strong>Pharmacist review is pending.</strong><p>These developer-authored examples are software research material, not patient records or treatment guidance. All medicine names are fictional. Judge what the documents support, not whether treatment is suitable.</p></div><h2>How to review</h2><ol><li>Read the rubric below. Start with the eight practice packets to clarify definitions.</li><li>For each evaluation packet, choose one label, cite source lines or document dates, and explain your reasoning and uncertainty.</li><li>Complete evaluation judgments before viewing MedDelta predictions, developer reference labels, or prior reviews.</li><li>Export your review JSON from the lab. You can reopen it to resume. Browser work disappears on reload.</li><li>After completing the evaluation set, compare predictions and record disagreements. Changes made after exposure must remain distinguishable from the initial judgments.</li></ol><p>Document dates order evidence. A later explicit change does not automatically resolve an earlier unexplained discrepancy. Missing mention never implies a stop. An explicit stop is a documentary finding, not a treatment recommendation. Line 0 refers to the document date.</p><p>Names, reviewer roles, and timestamps are self-entered or browser-generated. This workflow does not authenticate clinicians or prevent prior exposure outside the app.</p><p class="no-print"><a class="text-button" href="review-pack.pdf" download>Download printable review pack PDF ↓</a></p><p class="no-print">Use your browser's Print command for a paper copy. <a class="text-button" href="blank-review.csv" download>Download blank review CSV ↓</a> (for manual use; the app reopens its own JSON exports).</p><h2>Label rubric</h2><table><thead><tr><th>Label</th><th>Meaning</th></tr></thead><tbody>
+<tr><td>Matching instructions</td><td>Written amounts (including equivalent SI units), route, and frequency agree where mentioned.</td></tr>
+<tr><td>Documented change</td><td>An explicit change or restart explains the transition, without an earlier unresolved discrepancy.</td></tr>
+<tr><td>Unexplained discrepancy</td><td>Instructions disagree without an adequate explanation, or disagree on the same date with unknown order.</td></tr>
+<tr><td>Missing from latest record</td><td>The medicine is omitted from a latest record without an applicable explicit stop. Omission is not discontinuation.</td></tr>
+<tr><td>Explicit stop documented</td><td>The latest target-specific instruction is an explicit stop, with no later restart or unresolved discrepancy.</td></tr>
+<tr><td>First documented</td><td>First mention in the supplied records; actual treatment start date is unknown.</td></tr>
+<tr><td>Insufficient evidence</td><td>Dates, missing fields, or ambiguous/conditional instructions prevent a supported judgment. Clear wording is not unresolved just because software cannot parse it.</td></tr>
+</tbody></table><h2>Source packets</h2><p>No predictions or proposed labels are included below. Cite the records and lines used for each judgment.</p>
+<section class="review-packet"><h2>D01 · Alphamed · development</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>D02 · Alphamed · development</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>D03 · Alphamed · development</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Change Alphamed 10 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>D04 · Alphamed · development</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Change Alphamed 5 mg orally twice daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>D05 · Alphamed · development</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Stop Alphamed.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>D06 · Alphamed · development</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Stop Alphamed.</p>
+<p>2. Continue Betamed 5 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>D07 · Alphamed · development</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<p>2. Continue Betamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Continue Betamed 5 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>D08 · Alphamed · development</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Continue Gammamed 5 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E01 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Continue Alphamed 10 mg orally once daily.</p>
+<h3>Record 3 (r3)</h3><p>Line 0 — Document date: 2026-06-25</p>
+<p>1. Change Alphamed 10 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E02 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Continue Alphamed 10 mg orally once daily.</p>
+<h3>Record 3 (r3)</h3><p>Line 0 — Document date: 2026-06-25</p>
+<p>1. Change Alphamed 20 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E03 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Continue Alphamed 10 mg orally once daily.</p>
+<h3>Record 3 (r3)</h3><p>Line 0 — Document date: 2026-06-25</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E04 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Continue Alphamed 10 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E05 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-25</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 3 (r3)</h3><p>Line 0 — Document date: 2026-06-25</p>
+<p>1. Change Alphamed 10 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E06 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E07 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Stop Alphamed.</p>
+<h3>Record 3 (r3)</h3><p>Line 0 — Document date: 2026-06-25</p>
+<p>1. Start Alphamed 5 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E08 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Stop Alphamed.</p>
+<h3>Record 3 (r3)</h3><p>Line 0 — Document date: 2026-06-25</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E09 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Stop Alphamed.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Stop Alphamed.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E10 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Hold Alphamed until the next review.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E11 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Alphamed 5 mg; frequency is unreadable.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E12 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 10 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Reduce Alphamed from 10 mg to 5 mg after three days, then stop.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E13 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-02-30</p>
+<p>1. Change Alphamed 10 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E14 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: (missing)</p>
+<p>1. Change Alphamed 10 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E15 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-25</p>
+<p>1. Change Alphamed 10 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E16 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 1 g orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Continue Alphamed 1000 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E17 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Continue Alphamed 5 mg topically once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E18 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 0.5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E19 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<p>2. Continue Betamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Change Alphamed 10 mg orally once daily.</p>
+<p>2. Continue Betamed 5 mg orally once daily.</p>
+<h3>Record 3 (r3)</h3><p>Line 0 — Document date: 2026-06-25</p>
+<p>1. Continue Betamed 5 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E20 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Stop Alphamed.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Continue Betamed 5 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E21 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Betamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E22 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Please increase Alphamed to 10 mg by mouth once a day.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E23 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Please discontinue taking Alphamed.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+<section class="review-packet"><h2>E24 · Alphamed · evaluation</h2>
+<h3>Record 1 (r1)</h3><p>Line 0 — Document date: 2026-06-01</p>
+<p>1. Continue Alphamed 5 mg orally once daily.</p>
+<h3>Record 2 (r2)</h3><p>Line 0 — Document date: 2026-06-12</p>
+<p>1. Do not stop Alphamed. Continue Alphamed 5 mg orally once daily.</p>
+<p>Judgment: ____________________<br>Evidence (record IDs and lines): ____________________<br>Reasoning / uncertainty: ____________________________________________________</p></section>
+</main></body></html>

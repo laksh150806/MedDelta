@@ -1,0 +1,503 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "meddelta-temporal-v1",
+  "status": "Proposed developer reference labels; pharmacist review pending.",
+  "labels": [
+    {
+      "caseId": "D01",
+      "label": "consistent",
+      "rationale": "The two written regimens match.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "D02",
+      "label": "consistent",
+      "rationale": "Daily and once daily describe the same frequency here.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "D03",
+      "label": "change",
+      "rationale": "The later record explicitly describes a change to 10 mg.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "D04",
+      "label": "change",
+      "rationale": "The later record explicitly changes the frequency.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "D05",
+      "label": "stopped",
+      "rationale": "The later record explicitly stops the target medicine.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "D06",
+      "label": "stopped",
+      "rationale": "The stop instruction names Alphamed; the other medicine is separate.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "D07",
+      "label": "missing",
+      "rationale": "Alphamed is omitted from the later record without a stop instruction.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "D08",
+      "label": "missing",
+      "rationale": "A different medicine is listed later; no substitution or stop is documented.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E01",
+      "label": "conflict",
+      "rationale": "The earlier unexplained 5-to-10 mg discrepancy remains unresolved; a later matching change instruction does not explain it.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        },
+        {
+          "recordId": "r3",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E02",
+      "label": "conflict",
+      "rationale": "The explicit final change does not explain the earlier undocumented increase.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        },
+        {
+          "recordId": "r3",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E03",
+      "label": "conflict",
+      "rationale": "Both dose transitions lack an explicit explanation; returning to the earlier dose does not erase the discrepancy.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        },
+        {
+          "recordId": "r3",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E04",
+      "label": "conflict",
+      "rationale": "Different doses share a document date, so their order is unknown.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E05",
+      "label": "conflict",
+      "rationale": "The two latest records disagree on the same date. A change word does not establish their order.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        },
+        {
+          "recordId": "r3",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E06",
+      "label": "consistent",
+      "rationale": "Same-date records agree on the written instruction; no ordering assumption is needed.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E07",
+      "label": "change",
+      "rationale": "An explicit start follows an explicit stop; this is a documented transition, not proof of treatment suitability.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        },
+        {
+          "recordId": "r3",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E08",
+      "label": "conflict",
+      "rationale": "A continue instruction follows a stop without an explicit restart explanation.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        },
+        {
+          "recordId": "r3",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E09",
+      "label": "stopped",
+      "rationale": "Both records explicitly stop the medicine. No restart is documented.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E10",
+      "label": "unresolved",
+      "rationale": "A conditional hold has no known endpoint here and cannot be reduced to a permanent stop or a single regimen.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E11",
+      "label": "unresolved",
+      "rationale": "The later frequency is missing, preventing a supported comparison of the full instruction.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E12",
+      "label": "unresolved",
+      "rationale": "A multi-stage taper with relative timing cannot be reduced to one dated instruction from these records.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E13",
+      "label": "unresolved",
+      "rationale": "An invalid document date prevents a supported ordering.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 0
+        }
+      ]
+    },
+    {
+      "caseId": "E14",
+      "label": "unresolved",
+      "rationale": "The second document has no date, so its temporal relation is unknown.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 0
+        }
+      ]
+    },
+    {
+      "caseId": "E15",
+      "label": "change",
+      "rationale": "The later-dated record explicitly changes the dose; input order is irrelevant.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E16",
+      "label": "consistent",
+      "rationale": "One gram equals 1,000 milligrams. The amount, route, and frequency agree despite different unit notation.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E17",
+      "label": "conflict",
+      "rationale": "The route changes without an explicit explanation. This task does not judge whether either route is appropriate.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E18",
+      "label": "conflict",
+      "rationale": "The decimal changes the amount tenfold with no documented explanation.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E19",
+      "label": "missing",
+      "rationale": "The target is missing in the later record; this does not establish discontinuation.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E20",
+      "label": "stopped",
+      "rationale": "The latest available target-specific instruction is an explicit stop; the later unrelated record does not document a restart.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E21",
+      "label": "new",
+      "rationale": "Alphamed is first documented in the supplied records. This is not evidence of the actual treatment start date.",
+      "evidence": [
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E22",
+      "label": "change",
+      "rationale": "The later wording explicitly increases the amount; this meaning is clear to a human reviewer.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E23",
+      "label": "stopped",
+      "rationale": "The later wording explicitly discontinues the medicine.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "caseId": "E24",
+      "label": "consistent",
+      "rationale": "The negated stop is followed by the same complete continue instruction. A stop must not be inferred from the negated word.",
+      "evidence": [
+        {
+          "recordId": "r1",
+          "line": 1
+        },
+        {
+          "recordId": "r2",
+          "line": 1
+        }
+      ]
+    }
+  ]
+}

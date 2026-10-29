@@ -4,7 +4,7 @@ A working medication-record comparison prototype. Open dated source records, ins
 
 ![MedDelta medication review workspace with fictional sample records](docs/preview.png)
 
-**Status:** Working v0.4 prototype with 51 automated behavioral tests, local printed-English OCR, PDF/photo import, a local action classifier, and source-linked extraction review. Pharmacist-reviewed validation is still pending.
+**Status:** Working v0.5 prototype with 63 automated behavioral tests, local printed-English OCR, PDF/photo import, a local action classifier, and source-linked extraction review. A frozen temporal benchmark and reviewer lab are included; pharmacist-reviewed validation is still pending.
 
 **Hosted demo:** https://meddelta-review.lakshnagori1508.chatgpt.site (private to the project owner). Everyone with this repository can run the same application locally.
 
@@ -41,6 +41,8 @@ npm test
 - Explicit changes, unexplained conflicts, omissions, matching instructions, and explicit stops.
 - Per-medicine review notes and a complete JSON export.
 - Unsupported lines remain visible and make the comparison provisional.
+- A Validation lab with 32 fictional packets, source citations, independent judgments, and export/reopen.
+- Prediction exposure and revision history, plus a reproducible full-history vs latest-pair benchmark.
 
 ## Important scope
 
@@ -73,11 +75,14 @@ Use only fictional or appropriately de-identified records. Exported files contai
 - `scripts/smoke_pdf.py`, `scripts/smoke_ocr.py`: real browser integration checks using fictional fixtures.
 - `dist/index.html`, `dist/styles.css`: responsive interface.
 - `tests/engine.test.js`: core behavioral checks.
+- `dist/validation/`: frozen cases, proposed reference labels, benchmark, review-state validation, and reviewer UI.
+- `scripts/benchmark.mjs`: reproducible temporal benchmark with source/data hashes.
+- `scripts/smoke_validation.py`: browser checks for judgments, exports, and exposure history.
 - `server.js`: dependency-free development server.
 
 ## Next research milestone
 
-Use the project brief to establish a pharmacist-reviewed annotation rubric and separate development/evaluation cases. Compare the extraction pipeline with expanded-rule and language-model baselines, and measure unsupported conclusions as well as coverage. Handwriting, multilingual extraction, and broader medication matching remain future work.
+Use the new review kit to collect pharmacist judgments before revealing predictions, then document disagreements and adjudication. A second independent reviewer and a separately authored external test set would strengthen the evidence. Expanded-rule and language-model baselines remain future research comparisons. Handwriting, multilingual extraction, and broader medication matching remain future work.
 
 See [PROJECT_BRIEF.md](PROJECT_BRIEF.md) for scope, evaluation design, prior work, and the semester plan.
 
@@ -113,3 +118,19 @@ Read [PDF import behavior and limits](docs/PDF_IMPORT.md). Original PDF bytes ar
 Choose **Add record → Try a printed scan → Read this page with OCR**. Correct the text beside the image, select the medication instructions, and acknowledge the visual check. Save with a document date, then confirm the structured fields in the review screen that opens.
 
 PNG, JPEG, WebP, and scanned PDF pages work with the same local OCR engine. Printed English only; handwriting is not supported. See [the OCR workflow, evidence, limits, and tests](docs/OCR_IMPORT.md).
+
+
+## Validation lab and temporal benchmark
+
+Open **Validation lab** from the medication workspace (it opens in a separate tab), or visit `/validation.html`. Review the eight practice packets and then the 24 evaluation packets, citing source text and recording a label and explanation. Export to retain the review; **Reopen review** restores the lab's own JSON format. These are separate from medication-workspace exports. Predictions stay hidden until you choose to compare. Revealing them records exposure; subsequent revisions retain earlier judgments.
+
+The hosted lab is owner-private. For an outside reviewer, run the repository locally or share the [printable review pack](docs/meddelta-review-pack.pdf) and [blank CSV](dist/validation/blank-review.csv). No sharing settings are changed by this feature. The guide and packet contain no expected answers.
+
+```sh
+npm run benchmark
+npm run benchmark:check
+```
+
+On the 24 developer-authored evaluation packets, full history matches **20/24** proposed labels and the latest-pair baseline matches **18/24**. Both provide non-abstaining findings on **16/24** packets. The full-history method has **one wrong non-abstaining finding** (equivalent units), versus three for the baseline. Five abstentions correctly match insufficient-evidence labels; three miss clear expanded wording. These constructed cases are not independent clinical validation, and the reference labels still need pharmacist review.
+
+Read [the protocol, metrics, known failures, and reviewer procedure](docs/VALIDATION_PROTOCOL.md). The [complete benchmark report](dist/validation/benchmark-report.json) preserves every result. The comparison algorithm was not tuned on this evaluation during v0.5.

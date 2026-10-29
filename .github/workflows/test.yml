@@ -29,5 +29,10 @@ jobs:
           node --check dist/pdf-layout.js
           node --check dist/ocr.js
           node --check dist/ocr-worker.js
+          node --check dist/validation/benchmark.js
+          node --check dist/validation/review-state.js
+          node --check dist/validation/lab.js
       - name: Verify reproducible development evaluation
         run: npm run evaluate:check
+      - name: Verify frozen temporal benchmark
+        run: npm run benchmark:check

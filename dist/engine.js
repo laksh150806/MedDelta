@@ -1,7 +1,7 @@
 // Conservative comparison; expanded extraction enters only after human confirmation.
 import {confirmedEvent} from './review.js';
 import {sourceLocation,needsOcrReview} from './provenance.js';
-export const VERSION = '0.4.0';
+export const VERSION = '0.5.0';
 const FREQUENCIES = ['once daily','twice daily','three times daily','once weekly','as needed','daily','weekly'];
 export function validDate(value) {
   return /^\d{4}-\d{2}-\d{2}$/.test(value || '') && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0,10) === value;
